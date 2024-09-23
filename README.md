@@ -1,50 +1,42 @@
-# Welcome to your Expo app 👋
+# Aplicativo de Fornecedores
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Visão Geral
 
-## Get started
+Este aplicativo permite que os usuários cadastrem fornecedores, incluindo informações como nome, endereço, contato, categoria e uma imagem associada. Todos os dados são armazenados localmente no dispositivo do usuário usando o AsyncStorage. A navegação é feita através de uma interface de navegação em abas.
 
-1. Install dependencies
+## Estrutura do Aplicativo
 
-   ```bash
-   npm install
-   ```
+O aplicativo é composto por três principais componentes:
 
-2. Start the app
+1. **AppNavigator**: Gerencia a navegação entre as telas.
+2. **Tela de Cadastro de Fornecedor**: Permite ao usuário cadastrar novos fornecedores.
+3. **Tela de Listagem de Fornecedores**: Exibe a lista de fornecedores cadastrados.
 
-   ```bash
-    npx expo start
-   ```
+### 1. AppNavigator
 
-In the output, you'll find options to open the app in a
+O AppNavigator usa `createBottomTabNavigator` para criar uma navegação em abas entre as telas de "Cadastrar Fornecedor" e "Lista de Fornecedores". Os ícones são gerados usando Ionicons, que mudam de acordo com a aba selecionada. As cores dos ícones das abas mudam entre azul (ativo) e cinza (inativo), melhorando a experiência do usuário.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 2. Tela de Cadastro de Fornecedor
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Nesta tela, os usuários podem inserir as informações do fornecedor, como nome, endereço, contato, categoria e uma imagem. O método de seleção de imagem solicita permissão para acessar a galeria e permite que o usuário escolha uma imagem. Após preencher todos os campos, os dados do fornecedor são validados e salvos no AsyncStorage.
 
-## Get a fresh project
+### 3. Tela de Listagem de Fornecedores
 
-When you're ready, run:
+A tela de listagem carrega os fornecedores salvos no AsyncStorage e os exibe em uma lista. Os usuários podem visualizar as informações de cada fornecedor em cartões e também têm a opção de atualizar a lista manualmente.
 
-```bash
-npm run reset-project
-```
+## Dependências
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- **React Native**: O framework principal utilizado para construir o aplicativo.
+- **React Navigation**: Para gerenciar a navegação entre as telas.
+- **Expo Image Picker**: Para selecionar imagens da galeria do dispositivo.
+- **Async Storage**: Para armazenar dados localmente no dispositivo.
 
-## Learn more
+## Execução do Aplicativo
 
-To learn more about developing your project with Expo, look at the following resources:
+1. **Instalação**: Clone o repositório e instale as dependências.
+2. **Executar**: Inicie o aplicativo em um simulador ou dispositivo real.
+3. **Interação**: Adicione fornecedores usando o formulário e visualize-os na lista.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Conclusão
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Este aplicativo fornece uma interface simples e eficaz para gerenciar fornecedores, armazenando todas as informações localmente. A utilização do AsyncStorage garante que os dados sejam persistentes mesmo após o fechamento do aplicativo. A navegação em abas proporciona uma experiência de usuário intuitiva e fácil.
